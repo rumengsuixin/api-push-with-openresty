@@ -143,7 +143,7 @@ docker-compose up -d
 
 ```
 
-### cli 测试代码
+### cli 测试代码示例
 
 ```sh
 curl --header "Content-Type: application/json" \
