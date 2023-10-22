@@ -2,6 +2,8 @@ FROM openresty/openresty:1.21.4.1-0-jammy
 
 RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
 
+RUN apt-get update && apt-get install -y vim
+
 COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
