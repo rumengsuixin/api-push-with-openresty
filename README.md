@@ -140,7 +140,8 @@ http {
 ```sh
 # 启动容器
 docker-compose up -d 
-
+docker compose ps
+docker exec -it proxy_nginx bash
 ```
 
 ### cli 测试代码示例

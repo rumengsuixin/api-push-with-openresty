@@ -17,7 +17,8 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     networks:
-      - backnet
+      proxy_network: 
+        ipv4_address: 192.168.1.110
     environment:
       - MYSQL_DATABASE=example
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
@@ -35,8 +36,8 @@ services:
     ports:
       - 9006:9006
     networks:
-      - backnet
-      - frontnet
+      proxy_network: 
+        ipv4_address: 192.168.1.65
     depends_on:
       db:
         condition: service_healthy
@@ -50,8 +51,8 @@ services:
     ports:
       - 9007:9006
     networks:
-      - backnet
-      - frontnet
+      proxy_network: 
+        ipv4_address: 192.168.1.62
     depends_on:
       db:
         condition: service_healthy
@@ -65,8 +66,8 @@ services:
     ports:
       - 9008:9006
     networks:
-      - backnet
-      - frontnet
+      proxy_network: 
+        ipv4_address: 192.168.1.203
     depends_on:
       db:
         condition: service_healthy
@@ -80,8 +81,8 @@ services:
     ports:
       - 9009:9006
     networks:
-      - backnet
-      - frontnet
+      proxy_network: 
+        ipv4_address: 192.168.1.186
     depends_on:
       db:
         condition: service_healthy
@@ -95,9 +96,13 @@ services:
       - "8888:80"
     container_name: proxy_nginx
     depends_on: 
-      - backend
+      - backend1
+      - backend2
+      - backend3
+      - backend4
     networks:
-      - frontnet
+      proxy_network: 
+        ipv4_address: 192.168.1.112
 
 volumes:
   db-data:
@@ -107,5 +112,9 @@ secrets:
     file: db/password.txt
 
 networks:
-  backnet:
-  frontnet:
+  proxy_network:
+    name: "proxy_network"
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
