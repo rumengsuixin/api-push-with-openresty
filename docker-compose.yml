@@ -95,6 +95,8 @@ services:
     ports:
       - "8888:80"
     container_name: proxy_nginx
+    volumes:
+        - '/opt/openresty:/usr/local/openresty'
     depends_on: 
       - backend1
       - backend2

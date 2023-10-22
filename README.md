@@ -147,7 +147,7 @@ docker exec -it proxy_nginx bash
 ### cli 测试代码示例
 
 ```sh
-curl localhost:8888
+curl 192.168.1.112:8888
 
 curl --header "Content-Type: application/json" \
   --request POST \
