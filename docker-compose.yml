@@ -37,7 +37,7 @@ services:
       - 9006:9006
     networks:
       proxy_network: 
-        ipv4_address: 192.168.1.65
+        ipv4_address: 192.168.1.62
     depends_on:
       db:
         condition: service_healthy
@@ -49,10 +49,10 @@ services:
     secrets:
       - db-password
     ports:
-      - 9007:9006
+      - 9007:9007
     networks:
       proxy_network: 
-        ipv4_address: 192.168.1.62
+        ipv4_address: 192.168.1.65
     depends_on:
       db:
         condition: service_healthy
@@ -64,7 +64,7 @@ services:
     secrets:
       - db-password
     ports:
-      - 9008:9006
+      - 9008:9008
     networks:
       proxy_network: 
         ipv4_address: 192.168.1.203
@@ -79,7 +79,7 @@ services:
     secrets:
       - db-password
     ports:
-      - 9009:9006
+      - 9009:9009
     networks:
       proxy_network: 
         ipv4_address: 192.168.1.186
