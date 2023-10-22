@@ -28,7 +28,7 @@ services:
 
   backend1:
     build:
-      context: backend
+      context: backend1
       target: builder
     restart: always
     secrets:
@@ -43,7 +43,7 @@ services:
         condition: service_healthy
   backend2:
     build:
-      context: backend
+      context: backend2
       target: builder
     restart: always
     secrets:
@@ -58,7 +58,7 @@ services:
         condition: service_healthy
   backend3:
     build:
-      context: backend
+      context: backend3
       target: builder
     restart: always
     secrets:
@@ -73,7 +73,7 @@ services:
         condition: service_healthy
   backend4:
     build:
-      context: backend
+      context: backend4
       target: builder
     restart: always
     secrets:
