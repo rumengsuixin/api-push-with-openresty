@@ -142,6 +142,9 @@ http {
 docker-compose up -d 
 docker compose ps
 docker exec -it proxy_nginx bash
+
+docker-compose logs
+docker logs -f proxy_nginx
 ```
 
 ### cli 测试代码示例
