@@ -146,6 +146,8 @@ docker-compose up -d
 ### cli 测试代码示例
 
 ```sh
+curl localhost:8888
+
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"username":"xyz","password":"xyz"}' \
