@@ -1,4 +1,4 @@
-FROM openresty/openresty:1.21.4.1rc3-1-bionic
+FROM openresty/openresty:1.21.4.1-0-jammy
 
 RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
 
