@@ -33,7 +33,7 @@ services:
     secrets:
       - db-password
     ports:
-      - 9006:9006
+      - 19006:9006
     networks:
       - backnet
       - frontnet
@@ -48,7 +48,7 @@ services:
     secrets:
       - db-password
     ports:
-      - 9007:9007
+      - 19007:9006
     networks:
       - backnet
       - frontnet
@@ -63,7 +63,7 @@ services:
     secrets:
       - db-password
     ports:
-      - 9008:9008
+      - 19008:9006
     networks:
       - backnet
       - frontnet
@@ -78,7 +78,7 @@ services:
     secrets:
       - db-password
     ports:
-      - 9009:9009
+      - 19009:9006
     networks:
       - backnet
       - frontnet
