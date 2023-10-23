@@ -45,46 +45,31 @@ services:
       context: backend2
       target: builder
     restart: always
-    secrets:
-      - db-password
     ports:
       - 19007:9006
     networks:
       - backnet
       - frontnet
-    depends_on:
-      db:
-        condition: service_healthy
   backend3:
     build:
       context: backend3
       target: builder
     restart: always
-    secrets:
-      - db-password
     ports:
       - 19008:9006
     networks:
       - backnet
       - frontnet
-    depends_on:
-      db:
-        condition: service_healthy
   backend4:
     build:
       context: backend4
       target: builder
     restart: always
-    secrets:
-      - db-password
     ports:
       - 19009:9006
     networks:
       - backnet
       - frontnet
-    depends_on:
-      db:
-        condition: service_healthy
   ## 上面的backend/db 是后端服务用例, 测试Docker in Docker
   proxy_nginx: 
     build:
